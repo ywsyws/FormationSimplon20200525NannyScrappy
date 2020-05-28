@@ -15,7 +15,7 @@ class NannySpider(scrapy.Spider):
         #     f.write(response.body)
         # self.log('Saved file %s' % filename)
 
-        for nanny in response.css("div.results")[0]:
+        for nanny in response.css("div.results"):
             yield {
                 'name' : nanny.css('div.screen-name::text').get(),
                 'rating' : nanny.css('img.star-rating').re(r'\d\sstars')[0].split(' ')[0],
@@ -38,4 +38,4 @@ class NannySpider(scrapy.Spider):
     #  ...:     name = nanny.css('div.screen-name::text').get()
     #  ...:     rating = nanny.css('img.star-rating').re(r'\d\sstars')[0].split(' ')[0]
     #  ...:     hourly_rate = nanny.css('div.flag::text').get()
-    #  ...:     print((dict(name=name, rating=rating, hourly_rate=hourly_rate))
+    #  ...:     print((dict(name=name, rating=rating, hourly_rate=hourly_rate)))
