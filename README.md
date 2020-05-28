@@ -8,7 +8,7 @@
 
 #### to run a container
 ```docker container run -it --name <container name> -p 8001:5000 -v "$(PWD):/workspace" -d <image name>```
-e.g.: docker container run (--rm) -it --name "azure-ml" -p 8000:5000 -v "$(PWD):/workspace" (-d) jupyter-python
+e.g.: docker container run (--rm) -it --name "azure-ml" -p 8001:5000 -v "$(PWD):/workspace" (-d) jupyter-python
 explaination:  	       containers name /  hostPC port: service port in container / $(PWD) = projects directory
 
 #### to execute the container in bash
@@ -18,7 +18,7 @@ explaination:  	       containers name /  hostPC port: service port in container
 ```jupyter notebook --port=5000 --NotebookApp.password='' --NotebookApp.token='' --no-browser --ip=0.0.0.0 --allow-root```
 
 #### launch jupyter notebook in navigator
-localhost:8000
+localhost:8001
 
 ## Consignes
 Use Scrapy to scrap a site
